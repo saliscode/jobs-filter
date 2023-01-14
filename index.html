@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./job-list.css" />
+
+  <title>Job Listings</title>
+
+  <style>
+    .attribution {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+
+</head>
+
+<body>
+  <header class="header"></header>
+  <div class="container">
+    <div class="search">
+      <div class="search_content" id="search_content"></div>
+
+      <div class="search_clear">
+        Clear
+      </div>
+    </div>
+
+    <div class="jobs" id="jobs">
+
+    </div>
+
+
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Yussif Salis</a>
+      </div>
+
+      <script src="./joblist.js">
+        console.log("hello");
+      </script>
+  </div>
+</body>
+
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="./job-list.css" />
+
+  <title>Job Listings</title>
+
+</head>
+
+<header>
+  <img src="./images/bg-header-desktop.svg" alt="header" />
+</header>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="filter-tags-c">
+                    <ul id="filter-tags-list"></ul>
+                    <p class="clear-tags" id="js-clear-tags"> Clear</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="col-12" id="job-list">
+                <li class="job-card new featured">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/photosnap.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Photosnap</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Senior Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>1d ago</li>
+                                    <li>Full Time</li>
+                                    <li>USA Only</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Frontened</li>
+                        <li>Senior</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </li>
+                <li class="job-card new featured">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/manage.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Manage</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Fullstack Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>1d ago</li>
+                                    <li>Part Time</li>
+                                    <li>Remote</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Fullstack</li>
+                        <li>Midweight</li>
+                        <li>Python</li>
+                        <li>React</li>
+                    </ul>
+                </li>
+                <li class="job-card new">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/account.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Account</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Junior Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>2d ago</li>
+                                    <li>Part Time</li>
+                                    <li>USA Only</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Frontened</li>
+                        <li>Junior</li>
+                        <li>React</li>
+                        <li>Sass</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/myhome.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>MyHome</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Junior Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>5d ago</li>
+                                    <li>Contract</li>
+                                    <li>USA Only</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Frontened</li>
+                        <li>Junior</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/loop-studios.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Loop Studios</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Software Engineer</h6>
+                                </a>
+                                <ul>
+                                    <li>1w ago</li>
+                                    <li>Full Time</li>
+                                    <li>Worldwide</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>FullStack</li>
+                        <li>Midweight</li>
+                        <li>JavaScript</li>
+                        <li>Sass</li>
+                        <li>Ruby</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/faceit.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>FaceIt</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Senior Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>2w ago</li>
+                                    <li>Full Time</li>
+                                    <li>UK only</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Backend</li>
+                        <li>Junior</li>
+                        <li>Ruby</li>
+                        <li>RoR</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/shortly.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Shotly</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Junior Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>1w ago</li>
+                                    <li>Full Time</li>
+                                    <li>Worldwide</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Frontened</li>
+                        <li>Junior</li>
+                        <li>HTML</li>
+                        <li>Sass</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/insure.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Insure</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Junior Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>1w ago</li>
+                                    <li>Full Time</li>
+                                    <li>USA Only</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Frontened</li>
+                        <li>Junior</li>
+                        <li>Vue</li>
+                        <li>Javascript</li>
+                        <li>Sass</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/eyecam-co.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>Eyecam Co.</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Senior Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>1w ago</li>
+                                    <li>Full Time</li>
+                                    <li>Worldwide</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Fullstack</li>
+                        <li>Midweight</li>
+                        <li>Javascipt</li>
+                        <li>Django</li>
+                        <li>Python</li>
+                    </ul>
+                </li>
+                <li class="job-card">
+                    <div class="job-card__info">
+                        <div class="d-md-flex align-items-center">
+                            <div class="img-c"><img src="./images/the-air-filter-company.svg" /></div>
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <p>The Air Filter Company</p>
+                                    <p class="tag-new">New!</p>
+                                    <p class="tag-featured">Featured</p>
+                                </div><a href="javascript:void(0)">
+                                    <h6>Frontend Developer</h6>
+                                </a>
+                                <ul>
+                                    <li>1mo ago</li>
+                                    <li>Part Time</li>
+                                    <li>Worldwide</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="job-card__tags">
+                        <li>Frontened</li>
+                        <li>Junior</li>
+                        <li>React</li>
+                        <li>Sass</li>
+                        <li>Javascript</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+  <script src="joblist.js"></script>
+</body>
+
+</html> -->
