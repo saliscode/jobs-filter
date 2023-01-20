@@ -171,13 +171,13 @@ const jobsListings = [
           <div class="company-newfeatured-con">
               <span class="jobs_company">${jobData.company}</span>
             <div class="new-featured-tag">
-              <div class="newtag" id="ntag">NEW!</div>
-              <div class="featuredtag" id="ntag">FEATURED</div>
+              <div class="newtag ntag--hidden" id="ntag">NEW!</div>
+              <div class="featuredtag ntag--hidden" id="ntag">FEATURED</div>
             </div>
           </div>
 
           <span class="jobs_title">${jobData.position}</span>
-
+           
           <ul class="jobs_details">
             <li class="jobs_details-item">${jobData.postedAt}</li>
             <li class="jobs_details-item">${jobData.contract}</li>
@@ -198,6 +198,22 @@ const jobsListings = [
          ...(jobData.languages || []),
          ...(jobData.tools || []),
     ];
+
+     
+    const newOrFeatured = [
+      jobData.new,
+      jobData.featured,
+    ];
+
+    const newAndFeatured = document.getElementsByClassName('new-featured-tag');
+
+    function newFeatured () {
+      if (newOrFeatured.jobData.new || newOrFeatured.jobData.featured == false) {
+           newAndFeatured.add('ntag--hidden')
+      }
+    }
+
+
     
     const doesNotPassFilter = filterTags.length && !filterTags.some(tag => (
       tagsArray.includes(tag)
@@ -206,7 +222,7 @@ const jobsListings = [
     if(doesNotPassFilter) {
       return '';
     }
-      
+
     const tagsString = tagsArray.reduce((acc, currentTag) => {
         return acc + getTagHTML(currentTag); 
     }, '');
@@ -217,8 +233,7 @@ const jobsListings = [
 
 function toggleClass(el, className) {
     if(el.classList.contains(className)) {
-        el.classList.remove(className);    
-        
+        el.classList.remove(className);         
         return;
     }
         el.classList.add(className); 
@@ -252,28 +267,10 @@ function setJobsListings(filterTags) {
 // clear all ....
 const clearAll = document.getElementById('search_clear');
 
-clearAll.addEventListener('click', (event) =>{
+clearAll.addEventListener('click', () =>{
      document.getElementById('search_content').innerHTML = "";    
     
 });
-
-// css styling of new and feature tags;
-
-let newTag = Object.keys(jobsListings);
-
-const hiddenNewTag = document.getElementsByClassName('new-featured-tag')
-// let featureTag = Object.keys(jobsListings);
-
-  newTag.forEach(() => {
-    if (jobsListings[newTag] === true) {
-      hiddenNewTag.classList.add('ntag--hidden');      
-    }    
-  }) 
-
-
-
-
-
 
 window.addEventListener('click', (event) =>{
     const targetEl = event.target;
