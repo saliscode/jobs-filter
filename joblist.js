@@ -166,7 +166,7 @@ const jobsListings = [
         let jobListingHTML = `
         <div class="jobs_item">
         <div class="jobs_column jobs_column-left">
-         <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
+          <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
           <div class="jobs_info">
           <div class="company-newfeatured-con">
               <span class="jobs_company">${jobData.company}</span>
@@ -185,6 +185,7 @@ const jobsListings = [
           </ul>
         </div>
       </div>
+      <hr class="horizontal--hidden horizontal--show"/>
       <div class="jobs_column jobs_column-right">
         ${JOB_TAGS_PLACEHOLDER}
       </div>
