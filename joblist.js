@@ -158,20 +158,22 @@ const jobsListings = [
                ${tag}
               </span>`;
     }
-
-    function getJobListingHTML(jobData) {
+ 
+    function getJobListingHTML(jobData, filterTags = []) {
        
         const JOB_TAGS_PLACEHOLDER = '###JOB_TAGS###';
 
         let jobListingHTML = `
         <div class="jobs_item">
-      <div class="jobs_column jobs_column-left">
-        <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
-        <div class="jobs_info">
-          <div class="new-featured-tag">
-            <span class="jobs_company">${jobData.company}</span>
-            <div class="newtag" id="ntag">NEW!</div>
-            <div class="featuredtag" id="ntag">FEATURED</div>
+        <div class="jobs_column jobs_column-left">
+         <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
+          <div class="jobs_info">
+          <div class="company-newfeatured-con">
+              <span class="jobs_company">${jobData.company}</span>
+            <div class="new-featured-tag">
+              <div class="newtag" id="ntag">NEW!</div>
+              <div class="featuredtag" id="ntag">FEATURED</div>
+            </div>
           </div>
 
           <span class="jobs_title">${jobData.position}</span>
@@ -196,6 +198,14 @@ const jobsListings = [
          ...(jobData.languages || []),
          ...(jobData.tools || []),
     ];
+    
+    const doesNotPassFilter = filterTags.length && !filterTags.some(tag => (
+      tagsArray.includes(tag)
+    ));
+
+    if(doesNotPassFilter) {
+      return '';
+    }
       
     const tagsString = tagsArray.reduce((acc, currentTag) => {
         return acc + getTagHTML(currentTag); 
@@ -205,34 +215,22 @@ const jobsListings = [
     
 };
 
-const jobsListingsHTML = jobsListings.reduce((acc, currentListing) =>{
-    return acc + getJobListingHTML(currentListing);
-}, '');
-
-
 function toggleClass(el, className) {
     if(el.classList.contains(className)) {
         el.classList.remove(className);    
         
         return;
-
     }
-        el.classList.add(className);
- 
+        el.classList.add(className); 
 }
 
-function toggleSearchbarTag(tagValue) {
-
+function getSearchBarTags(tagValue, searchContentEl) {    
     
-    const searchContentEl = document.getElementById('search_content');
     let searchBarTags = Array.from(searchContentEl.children)
         .map(node =>node.innerHTML && node.innerHTML.trim()) 
         .filter(tag => !!tag);
        
-     console.log('searchBarTags', searchBarTags, tagValue);
-
-    // console.log('search content', existingTags);
-     if(searchBarTags.includes(tagValue)) {
+         if(searchBarTags.includes(tagValue)) {
         console.log()
 
         searchBarTags = searchBarTags.filter(tag => tag !== tagValue);   
@@ -240,36 +238,75 @@ function toggleSearchbarTag(tagValue) {
         searchBarTags = [...searchBarTags, tagValue]; 
      }
 
-        
-
-    // const closeTagHTML = getTagHTML(targetEl.innerHTML, 'close-tag');
-    
-
-    //  searchContentEl.innerHTML = searchContentEl.innerHTML + closeTagHTML; 
-     searchContentEl.innerHTML = searchBarTags.reduce((acc, currentTag) => {
-        return acc + getTagHTML(currentTag, 'close-tag')
-     }, ''); 
-
+      return searchBarTags; 
 }
 
-document.getElementById('jobs').innerHTML = jobsListingsHTML;
+function setJobsListings(filterTags) {
+  const jobsListingsHTML = jobsListings.reduce((acc, currentListing) =>{
+    return acc + getJobListingHTML(currentListing, filterTags);
+}, '');
+
+   document.getElementById('jobs').innerHTML = jobsListingsHTML;
+}
+
+// clear all ....
+const clearAll = document.getElementById('search_clear');
+
+clearAll.addEventListener('click', (event) =>{
+     document.getElementById('search_content').innerHTML = "";    
+    
+});
+
+// css styling of new and feature tags;
+
+let newTag = Object.keys(jobsListings);
+
+const hiddenNewTag = document.getElementsByClassName('new-featured-tag')
+// let featureTag = Object.keys(jobsListings);
+
+  newTag.forEach(() => {
+    if (jobsListings[newTag] === true) {
+      hiddenNewTag.classList.add('ntag--hidden');      
+    }    
+  }) 
+
+
+
+
+
 
 window.addEventListener('click', (event) =>{
     const targetEl = event.target;
     const tagValue= targetEl.innerHTML.trim();
     const tagClasses = ['tag', 'close-tag'];
 
-    if(!targetEl.classList.contains('tag')) {
+    if(!tagClasses.some(c => targetEl.classList.contains(c))) {
         return;
-    }
+    }    
     
-    toggleSearchbarTag(tagValue)
+    const searchWrapper = document.getElementById('search');
+    const searchContentEl = document.getElementById('search_content');
+    const searchBarTags = getSearchBarTags(tagValue, searchContentEl);    
+
+    if (searchBarTags.length > 0) {
+      searchWrapper.classList.remove('search--hidden');
+    }else{
+      searchWrapper.classList.add('search--hidden');
+    };
+
+    // new and feature tags code appears below;
+
+    searchContentEl.innerHTML = searchBarTags.reduce((acc, currentTag) => {
+      return acc + getTagHTML(currentTag, 'close-tag')
+   }, ''); 
+
     toggleClass(targetEl, 'tag--active');
+    setJobsListings(searchBarTags)
 
 
 });
 
-
+setJobsListings()
 
 
 

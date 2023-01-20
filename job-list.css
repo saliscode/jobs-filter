@@ -4,7 +4,7 @@
 
 body{
 	background-color: hsl(180,52%, 96%);
-	font-family: "Spartan, sans-serif";
+	font-family: 'League Spartan', sans-serif;
 	padding-bottom: 40px;
 }
 :root{
@@ -31,7 +31,6 @@ body{
 
 .search{
 	width: 100%;
-
 	height: auto;
 	background-color: #fff;
 	border-radius: 10px;
@@ -42,6 +41,11 @@ body{
 	opacity: 1;
 	display: flex;
     justify-content: space-between;
+	transition: opacity 0.2s;
+}
+
+.search--hidden{
+	opacity: 0;
 }
 
 .search_clear{
@@ -84,22 +88,36 @@ body{
 .new-featured-tag{
 	display: flex;
 	flex-direction: row;
-	
+	/* background-color: blue; */
+	margin-left: 10px;	
+	/* padding-bottom: px; */
+}
+
+.company-newfeatured-con{
+	display: flex;
+	/* background-color: green; */
 }
 
 #ntag{
-	padding-left: 8px;
+	padding-left: 4px;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	padding-top: 8px;
-	padding-right: 4px;
+	/* padding-right: 4px; */
 	color: white;
 	border-radius: 17px;
 	font-size: 15px;
-	font-weight: 400;
-	margin: 4px 4px;
-	display: none;
+	font-weight: 300;
+	margin: 0px 8px;
+	height: 21px;
+    opacity: 1;
+}
+
+
+
+.ntag--hidden{
+	opacity: 0;
 }
 
 .featuredtag{
@@ -131,37 +149,43 @@ body{
 	font-size: 23px;
 	font-weight: 600;
 	display: block;
-	margin-bottom: 15px;
+	margin-bottom: 8px;
+	padding-top: 5px;
 }
 
-.jobs_title{
-
+.jobs_title{    
 	color: var(--very-dark-color);
 	font-size: 26px;
 	font-weight: 600;
 	display: block;
 	margin-bottom: 15px;
+
+}
+
+.jobs_title:hover{
+	color: #40A5A4;
+	cursor: pointer;
 }
 
 .jobs_details{
 	list-style: none;
 	margin: 0;
-	padding: 0;
+	padding: 0;	
 }
 
 
 .jobs_details-item{
 	display: inline-block;
 	color: hsl(180, 8%, 52%);
-	font-size: 26px;
-	line-height: 1em;
+	font-size: 24px;
+	line-height: 1em;	
 }
 
 .jobs_details-item::after{
 	content: "";
-	width: 3px;
-	height: 3px;
-	border-radius: 3px;
+	width: 4px;
+	height: 4px;
+	border-radius: 4px;
 	background-color: hsl(180, 8%, 52%);
 	display: inline-block;
 	margin: 5px 15px;
@@ -174,7 +198,7 @@ body{
 	padding: 10px 15px;
 	cursor: pointer;
 	border-radius: 6px;
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 25px;
 	color: var(--highlight-text-color);
 	margin: 5px;	
@@ -217,11 +241,51 @@ body{
 	display: none;
 }
 
-.jobs_company{
-	font-weight: 600;
-	display: block;
-	margin-bottom: 15px;
-} 
+
+/* media querries for mobile */
+
+
+/* 
+@media screen and (max-width: 395px) {
+	.jobs_item{
+		width: 100%;
+	}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -799,11 +863,6 @@ body{
 	display: none;
 }
 
-.jobs_company{
-	font-weight: 600;
-	display: block;
-	margin-bottom: 15px;
-} */
 
 
 
