@@ -164,29 +164,32 @@ const jobsListings = [
         const JOB_TAGS_PLACEHOLDER = '###JOB_TAGS###';
 
         let jobListingHTML = `
-        <div class="jobs_item">
-        <div class="jobs_column jobs_column-left">
+        <div class="jobs_item">        
+        <div class="jobs_column-left">
+         <div class="img-con">
           <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
-          <div class="jobs_info">
-          <div class="company-newfeatured-con">
-              <span class="jobs_company">${jobData.company}</span>
-            <div class="new-featured-tag">
-              <div class="newtag ntag--hidden" id="ntag">NEW!</div>
-              <div class="featuredtag ntag--hidden" id="ntag">FEATURED</div>
-            </div>
-          </div>
+         </div>
 
-          <span class="jobs_title">${jobData.position}</span>
+          <div class="jobs_info">
+            <div class="company-newfeatured-con">
+               <span class="jobs_company">${jobData.company}</span>
+               <div class="new-featured-tag">
+                 <div class="newtag ntag--hidden" id="ntag">NEW!</div>
+                 <div class="featuredtag ntag--hidden" id="ntag">FEATURED</div>
+               </div>
+            </div>
+
+            <span class="jobs_title">${jobData.position}</span>
            
-          <ul class="jobs_details">
-            <li class="jobs_details-item">${jobData.postedAt}</li>
-            <li class="jobs_details-item">${jobData.contract}</li>
-            <li class="jobs_details-item">${jobData.location}</li>
-          </ul>
+            <ul class="jobs_details">
+              <li class="jobs_details-item">${jobData.postedAt}</li>
+              <li class="jobs_details-item">${jobData.contract}</li>
+              <li class="jobs_details-item">${jobData.location}</li>
+            </ul>
+          </div>
         </div>
-      </div>
       <hr class="horizontal--hidden horizontal--show"/>
-      <div class="jobs_column jobs_column-right">
+      <div class="jobs_column-right">
         ${JOB_TAGS_PLACEHOLDER}
       </div>
     </div>
