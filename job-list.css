@@ -265,7 +265,7 @@
   	list-style: none;
   	padding: 0px;
   	display: flex;
-  	text-align: right;
+  	text-align: left;
   	margin-bottom: 15px;
 
   }
@@ -500,7 +500,10 @@
   	.featuredtag {
   		padding-right: 2px;
   	}
-
+    
+	.jobs_details-item{
+		font-size: 14px;
+	}
 
   }
 
