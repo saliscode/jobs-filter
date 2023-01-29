@@ -134,6 +134,7 @@ const jobsListings = [
         "languages": ["JavaScript", "Python"],
         "tools": ["Django"]
       },
+
       {
         "id": 10,
         "company": "The Air Filter Company",
@@ -151,7 +152,7 @@ const jobsListings = [
       }
     ];
 
-      
+  
 
     function getTagHTML(tag, tagClass = 'tag'){
       return `<span class="${tagClass}">
@@ -166,17 +167,21 @@ const jobsListings = [
         let jobListingHTML = `
         <div class="jobs_item">        
         <div class="jobs_column-left">
-         <div class="img-con">
-          <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
-         </div>
+           <div class="img-con">
+             <img src="${jobData.logo}" alt="${jobData.comapny}" class="jobs_img" />
+           </div>
 
-          <div class="jobs_info">
-            <div class="company-newfeatured-con">
-               <span class="jobs_company">${jobData.company}</span>
-               <div class="new-featured-tag">
-                 <div class="newtag ntag--hidden" id="ntag">NEW!</div>
+           <div class="jobs_info">
+              <div class="company-newfeatured-con">
+                <span class="jobs_company">
+                    ${jobData.company}
+                </span>
+               
+             <div class="new-featured-tag">
+                  <div class="newtag ntag--hidden" id="ntag">NEW!</div>
                  <div class="featuredtag ntag--hidden" id="ntag">FEATURED</div>
-               </div>
+             </div>
+               
             </div>
 
             <span class="jobs_title">${jobData.position}</span>
@@ -194,7 +199,6 @@ const jobsListings = [
       </div>
     </div>
     `;  
-  
 
     const tagsArray  = [
          jobData.role,
@@ -204,18 +208,7 @@ const jobsListings = [
     ];
 
      
-    const newOrFeatured = [
-      jobData.new,
-      jobData.featured,
-    ];
-
-    const newAndFeatured = document.getElementsByClassName('new-featured-tag');
-
-    function newFeatured () {
-      if (newOrFeatured.jobData.new || newOrFeatured.jobData.featured == false) {
-           newAndFeatured.add('ntag--hidden')
-      }
-    }
+    
 
 
     
@@ -234,6 +227,31 @@ const jobsListings = [
     return jobListingHTML.replace(JOB_TAGS_PLACEHOLDER, tagsString);
     
 };
+
+
+// new and featured display
+
+// jobsListings.forEach(function(data) {
+  // let mytag = document.getElementsByClassName("newtag");
+
+  // console.log(mytag);
+
+  // if(data.new == true) {
+    // mytag.classList.add("newtag");
+    // console.log(mytag.classList.add("newtag"))
+  // }
+  //  else{
+  //   mytag.classList.add("ntag--hidden");
+  // }
+  // mytag.innerHTML = data.company;
+  // document.body.appendChild(mytag);
+// });
+
+
+
+
+
+
 
 function toggleClass(el, className) {
     if(el.classList.contains(className)) {
