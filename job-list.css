@@ -108,7 +108,7 @@
 
   
 
-   .jobs_item:nth-child(1) {
+   /* .jobs_item:nth-child(1) {
   	border-left: 4px solid #409797;
   }  
 
@@ -116,9 +116,6 @@
   .jobs_item:nth-child(2) {
   	border-left: 4px solid #409797;
   }
-
-
-
 
   .jobs_item:nth-child(3) .featuredtag {
   	display: none;
@@ -152,7 +149,7 @@
 
   .jobs_item:nth-child(10) .ntag--hidden {
   	display: none;
-  } 
+  }  */
 
   .new-featured-tag {
   	display: flex;
@@ -171,7 +168,6 @@
 
   .featuredtag {
   	background-color: black;
-
   	text-align: center;
   	display: flex;
   	justify-content: center;
@@ -193,7 +189,6 @@
 
   .newtag {
   	background-color: #549190;
-
   	text-align: center;
   	display: flex;
   	justify-content: center;
