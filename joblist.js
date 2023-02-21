@@ -208,7 +208,7 @@ const jobsListings = [
          ...(jobData.languages || []),
          ...(jobData.tools || []),
     ];   
-    
+        
     const doesNotPassFilter = filterTags.length && !filterTags.some(tag => (
       tagsArray.includes(tag)
     ));
@@ -224,6 +224,8 @@ const jobsListings = [
     return jobListingHTML.replace(JOB_TAGS_PLACEHOLDER, tagsString);
     
 };
+
+
 
 
 function toggleClass(el, className) {
