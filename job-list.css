@@ -104,11 +104,9 @@
   	text-align: center;
   	margin: 0 auto;
   }
-
-
   
 
-   /* .jobs_item:nth-child(1) {
+   .jobs_item:nth-child(1) {
   	border-left: 4px solid #409797;
   }  
 
@@ -117,6 +115,11 @@
   	border-left: 4px solid #409797;
   }
 
+
+
+
+  
+  /* 
   .jobs_item:nth-child(3) .featuredtag {
   	display: none;
   } 
